@@ -8,9 +8,8 @@
 ## Description
 
 <b>Laravel</b> implementation of backend for popular game called 'Minesweeper' made by Robert Donner.</br>
-OxisweeperBackend implements application user interface and database for user authentication, authorization and record tracking for OxisweeperFrontend.
-
-<a href="https://en.wikipedia.org/wiki/Minesweeper_(video_game)">Here are full game rules.</a>
+*OxiSweeperBackend* implements application user interface and database for user authentication, authorization and record tracking.</br>
+*OxiSweeperFrontend* implements the Minesweeper game itself and routing for users depending of theirs role.
 
 ## Tools and technologies
 
