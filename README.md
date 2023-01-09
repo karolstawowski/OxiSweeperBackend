@@ -1,4 +1,5 @@
 # OxiSweeperBackend
+
 ![Language](https://img.shields.io/badge/language-PHP-3993fa)
 ![License](https://img.shields.io/github/license/karolstawowski/OxiSweeperBackend?color=3993fa)
 ![Version](https://img.shields.io/badge/version-0.0.1-3993fa) <br>
@@ -8,8 +9,8 @@
 ## Description
 
 <b>Laravel</b> implementation of backend for popular game called 'Minesweeper' made by Robert Donner.</br>
-*OxiSweeperBackend* implements application user interface and database for user authentication, authorization and record tracking.</br>
-*OxiSweeperFrontend* implements the Minesweeper game itself and routing for users depending of theirs role.
+_OxiSweeperBackend_ implements application user interface and database for user authentication, authorization and record tracking.</br>
+_OxiSweeperFrontend_ implements the Minesweeper game itself and routing for users depending of theirs role.
 
 ## Use case example
 
@@ -27,6 +28,7 @@ Unauthorized user is being redirected to allowed path. Unauthenticated user can 
 ## Database structure
 
 ### Scores table
+
 ```sql
 CREATE TABLE `scores` (
   `id` bigint(20) UNSIGNED NOT NULL PRIMARY KEY,
@@ -37,7 +39,9 @@ CREATE TABLE `scores` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 ```
+
 ### Users table
+
 ```sql
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL PRIMARY KEY,
@@ -49,7 +53,9 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 ```
+
 ### User roles table
+
 ```sql
 CREATE TABLE `user_roles` (
   `id` bigint(20) UNSIGNED NOT NULL PRIMARY KEY,
@@ -60,18 +66,21 @@ CREATE TABLE `user_roles` (
 ```
 
 ## API Routes
+
 ### Public routes
-- **POST** /register
-- **POST** /login
+
+-   **POST** /register
+-   **POST** /login
 
 ### Protected routes
-- **GET** /users
-- **GET** /scores
-- **POST** /role
-- **POST** /user
-- **POST** /score
-- **POST** /logout
 
+-   **GET** /users
+-   **GET** /scores
+-   **GET** /score/top/{user_token}/{difficulty_level}
+-   **POST** /role
+-   **POST** /user
+-   **POST** /score
+-   **POST** /logout
 
 ## Tools and technologies
 
