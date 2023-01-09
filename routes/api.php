@@ -28,6 +28,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/user', [UsersController::class, 'store']);
     Route::get('/scores', [ScoresController::class, 'index']);
     Route::post('/score', [ScoresController::class, 'store']);
+    Route::get('/score/top/{user_token}/{diff_level}', [ScoresController::class, 'search']);
     Route::post('/logout', [AuthController::class, 'logout']);
 });
 
