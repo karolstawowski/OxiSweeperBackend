@@ -1,5 +1,9 @@
 {
+    "name": "oxisweeperbackend",
+    "author": "Karol Stawowski",
     "private": true,
+    "version": "0.0.1",
+    "license": "MIT",
     "scripts": {
         "dev": "npm run development",
         "development": "mix",
