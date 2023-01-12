@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\PersonalAccessToken;
+use Illuminate\Support\Facades\Storage;
 
 class AuthController extends Controller
 {
@@ -43,10 +44,18 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
+        $log_file_name = 'loging_in_logs.csv';
+
         $fields = $request->validate([
             'name' => 'required|string',
             'password' => 'required|string',
         ]);
+
+        if (Storage::disk('local')->exists($log_file_name)) {
+            Storage::disk('local')->append($log_file_name, $fields['name'] . "," . date("Y.m.d H:i:s"));
+        } else {
+            Storage::disk('local')->put($log_file_name, "user_name, date \r\n" . $fields['name'] . ", " . date("Y.m.d H:i:s"));
+        }
 
         $user = Users::where('name', $fields['name'])->first();
 
