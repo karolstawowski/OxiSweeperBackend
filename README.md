@@ -12,6 +12,46 @@
 _OxiSweeperBackend_ implements application user interface and database for user authentication, authorization and record tracking.</br>
 _OxiSweeperFrontend_ implements the Minesweeper game itself and routing for users depending of theirs role.
 
+## Installation and usage
+
+### Prerequisite
+
+To run the project you need to have followed software installed:
+
+1. [Xampp](https://www.apachefriends.org/download.html)
+1. [Composer](https://getcomposer.org/)
+1. [Laravel Sanctum](https://laravel.com/docs/9.x/sanctum#installation)
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/karolstawowski/OxiSweeperBackend
+```
+
+2. Migrate the database:
+
+```bash
+php artisan migrate
+```
+
+3. Seed the database with records:
+
+```bash
+php artisan db:seed
+```
+
+### Project run
+
+To run the project use
+
+```bash
+php artisan serve
+```
+
+command in the root directory of the repositorium.
+
 ## Use case example
 
 1. User enters log in/register page
