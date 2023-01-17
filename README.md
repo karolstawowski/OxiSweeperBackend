@@ -30,13 +30,23 @@ To run the project you need to have followed software installed:
 git clone https://github.com/karolstawowski/OxiSweeperBackend
 ```
 
-2. Migrate the database:
+2. Create `.env` file based on `.env.example`
+
+```bash
+copy .env.example .env
+```
+
+3. Run Apache and MySQL server using Xampp 
+
+4. Create new database (default database name: `minesweeper`)
+
+5. Migrate the database:
 
 ```bash
 php artisan migrate
 ```
 
-3. Seed the database with records:
+6. Seed the database with records:
 
 ```bash
 php artisan db:seed
