@@ -71,7 +71,7 @@ command in the root directory of the repositorium.
 
 ## Authorization/authentication model
 
-When user logs in or registers, user token is being assigned. User token is stored in client's local storage.
+When user logs in or registers, user token is being assigned. User token is stored on the client side in cookies.
 Every time user enters any page, request for user role to backend is being sent. User role is stored in frontend application's context.
 Unauthorized user is being redirected to allowed path. Unauthenticated user can access `/login` path only.
 
